@@ -1,0 +1,38 @@
+def invalidFunction():  #Error message: invalid input
+    print(f"Invalid input, please try again")
+
+
+def storyFunction(): #choosing the madlibs, dont change for efficieny - needed to satisfy rubric
+    story = int(input("Please choose a number 1 through 3: "))
+    if story==1 : print(f"I like {noun1} I have {number1} {noun1} that I stole from my {relationship1}")
+    elif story==2 : print(f"I hate {noun1} I stole {number1} {noun1} that I gave to my {relationship1}")
+    elif story==3 : print(f"I have {number1} {noun1} and yet I want my {relationship1} to give me {number2} more")
+    else : 
+        invalidFunction()
+        storyFunction()
+
+validInput = False #allows while loop to work
+
+name = input("Please enter your name: ")
+if name == "David":
+    name = "Mr. Baker"
+    print(f"Error: Too many Davids, changing name")
+elif name == "david":
+    print(f"Error: Too many Davids, changing name")
+    name = "Mr. Baker"
+print(f"{name}")
+
+noun1 = input("Choose a plural noun: ") 
+
+while validInput == False:
+    number1 = int(input("Choose a number greater than or equal to 2: "))
+    if number1 >= 2:
+        validInput = True
+    else: invalidFunction()
+
+validInput = False #resets variable, allows it to be used later !! important do NOT remove 
+number2 = int(input("Choose a number: ")) 
+relationship1 = input("Choose a relationship you may have towards a person: ")
+
+storyFunction() 
+# violetspillneryear11project1
