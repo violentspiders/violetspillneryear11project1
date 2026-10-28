@@ -1,3 +1,11 @@
+number1 = 4
+noun1 = "eggs"
+validInput = False #allows while loop to work
+nounend = 0
+overRideBool = False
+number2 = 9
+relationship1 = "mom"
+
 def invalidFunction():  #Error message: invalid input
     print(f"Invalid input, please try again")
 
@@ -11,18 +19,27 @@ def storyFunction(): #choosing the madlibs, dont change for efficieny - needed t
         invalidFunction()
         storyFunction()
 
-validInput = False #allows while loop to work
 
-name = input("Please enter your name: ")
-if name == "David":
-    name = "Mr. Baker"
-    print(f"Error: Too many Davids, changing name")
-elif name == "david":
-    print(f"Error: Too many Davids, changing name")
-    name = "Mr. Baker"
-print(f"{name}")
 
-noun1 = input("Choose a plural noun: ") 
+while validInput == False:
+    overRideInt = 0
+    noun1 = input("Choose a plural noun: ") 
+    nounend = noun1[-1]
+    #print(f"{nounend}") #FOR DEBUGGING - DONT TURN ON OR ELSE ILL SCOOP OUT YOUR EYEBALLS AND USE THE OPTIC NERVE TO STRANGLE YOU
+    if nounend == "s" :
+        validInput = True
+    elif overRideBool == True:
+        validInput = True
+    else :
+        overRideInt = int(input("Not a valid plural noun, press 0 to re input your word, press 1 if you think this is a mistake: "))
+    if overRideInt == 0:
+        overRideBool = False
+    elif overRideInt == 1:
+        overRideBool = True
+    else:
+        invalidFunction()
+
+validInput == False
 
 while validInput == False:
     number1 = int(input("Choose a number greater than or equal to 2: "))
@@ -35,4 +52,5 @@ number2 = int(input("Choose a number: "))
 relationship1 = input("Choose a relationship you may have towards a person: ")
 
 storyFunction() 
+# violetspillneryear11project1
 # violetspillneryear11project1
